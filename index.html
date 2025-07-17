@@ -4,145 +4,136 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Políticas de Ideas - Kravex</title>
-  <link rel="icon" type="image/png" href="JOGO (1).png" />
+  <link rel="icon" type="image/png" href="logo.png" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
     body {
-      background-color: #ffffff;
-      color: #001f3f;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: #0a1a3a;
     }
 
-    header {
-      background-color: #001f3f;
+    /* NAVBAR */
+    nav {
+      background-color: #0a1a3a;
       color: white;
       display: flex;
       align-items: center;
-      padding: 10px 20px;
+      padding: 0.8rem 2rem;
     }
 
-    header img {
+    nav img {
       height: 40px;
-      margin-right: 10px;
+      margin-right: 1rem;
     }
 
-    header h1 {
+    nav h1 {
+      margin: 0;
       font-size: 1.5rem;
     }
 
-    .logo-entrada {
+    /* ANIMACIÓN INICIAL */
+    #intro {
       position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-      width: 100vw;
-      height: 100vh;
-      background-color: #001f3f;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: #0a1a3a;
       display: flex;
-      justify-content: center;
       align-items: center;
-      animation: fadeOut 2.5s ease-in-out forwards;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 2.5s ease forwards;
+      animation-delay: 2.5s;
     }
 
-    .logo-entrada img {
+    #intro img {
       width: 120px;
-      animation: zoomOut 2s ease-in-out forwards;
+      animation: zoomIn 2s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.2);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     @keyframes fadeOut {
-      0% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
 
-    @keyframes zoomOut {
-      0% { transform: scale(1.5); opacity: 0; }
-      50% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    main {
+    .container {
+      padding: 2rem;
       max-width: 800px;
-      margin: 60px auto;
-      padding: 20px;
-      background-color: #f8f9ff;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 50, 0.1);
+      margin: auto;
     }
 
     h2 {
-      margin-bottom: 20px;
-      font-size: 1.6rem;
-      text-align: center;
-      color: #001f3f;
+      color: #0a1a3a;
+      border-bottom: 2px solid #0a1a3a;
+      padding-bottom: 0.3rem;
     }
 
-    p, li {
-      font-size: 1.1rem;
-      margin: 10px 0;
-      line-height: 1.6;
+    a {
+      color: #0a1a3a;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    ul {
-      margin-left: 20px;
-    }
-
-    .email-link {
-      color: #001f3f;
+    a:hover {
       text-decoration: underline;
     }
 
-    .email-link:hover {
-      color: #0074d9;
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .warning {
+      font-weight: bold;
+      color: #d40000;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
-
-  <!-- Animación de entrada -->
-  <div class="logo-entrada">
-    <img src="JOGO (1).png" alt="NGStudios Logo" />
+  <!-- Intro Animada -->
+  <div id="intro">
+    <img src="logo.png" alt="NGStudios Logo" />
   </div>
 
-  <!-- Barra de navegación -->
-  <header>
-    <img src="JOGO (1).png" alt="Logo NGStudios" />
+  <!-- NAV -->
+  <nav>
+    <img src="logo.png" alt="Logo NGStudios" />
     <h1>NGStudios</h1>
-  </header>
+  </nav>
 
-  <!-- Contenido principal -->
-  <main>
+  <!-- CONTENIDO -->
+  <div class="container">
     <h2>Políticas de Ideas - Kravex</h2>
-
     <p>Kravex es un juego de terror en desarrollo. Esta página es para quienes deseen compartir ideas que serán tomadas por los desarrolladores y podrían incluirse en el juego.</p>
 
     <h3>¿Qué tipo de ideas podés enviar?</h3>
     <ul>
-      <li>Cualquier tipo de idea salvo:</li>
-      <li>Violencia sexual, abuso infantil o tortura explícita</li>
+      <li>Cualquier tipo de idea salvo : Violencia sexual, abuso infantil o tortura explícita</li>
       <li>Discriminación o discurso de odio</li>
       <li>Contenido extremadamente gráfico sin propósito narrativo</li>
     </ul>
 
-    <h3>⚠️ Condiciones de uso</h3>
-    <ul>
-      <li>Podemos usar, modificar o adaptar tu propuesta en el juego final.</li>
-      <li>No recibirás compensación económica, créditos ni derecho a reclamos legales.</li>
-      <li>Tu envío es voluntario y con fines colaborativos.</li>
-    </ul>
+    <div class="warning">⚠️ Condiciones de uso</div>
+    <p>Podemos usar, modificar o adaptar tu propuesta en el juego final.<br>
+    No recibirás compensación económica, créditos ni derecho a reclamos legales.<br>
+    Tu envío es voluntario y con fines colaborativos.</p>
 
     <h3>¿Cómo enviar tu idea?</h3>
-    <p>Podés escribirnos a: <a class="email-link" href="https://mail.google.com/mail/u/3/#inbox?compose=GTvVlcSBmlxrrHKnngjjvTpkFFqhcJXLVVzLjVxzkZVFvKSPWCZxDPsNzBPKLJtvkDRShwCVLZJfj" target="_blank">ng.studiios@gmail.com</a> o a través de los comentarios de la cuenta de TikTok.</p>
-  </main>
-
-</body>
-</html>
-
+    <p>Podés escribirnos a: <a href="https://mail.google.com/mail/u/3/#inbox?compose=GTvVlcSBmlxrrHKnngjjvTpkFFqhcJXLVVzLjVxzkZVFvKSPWCZxDPsNzBPKLJtvkDRShwCVLZJfj" target="_blank">ng.studiios@gmail.com</a> o a través de los comentarios de la cuenta de TikTok.</p>
+  </div>
 </body>
 </html>
 
