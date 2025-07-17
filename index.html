@@ -5,20 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Políticas de Ideas - Kravex</title>
   <style>
+    :root {
+      --azul-marino: #002244;
+      --blanco: #ffffff;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0d0d0d;
-      color: #f0f0f0;
+      background-color: var(--blanco);
+      color: var(--azul-marino);
+      overflow-x: hidden;
+    }
+
+    /* Intro animada */
+    #intro {
+      position: fixed;
+      background-color: var(--azul-marino);
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeOut 2s ease 2.5s forwards;
+      z-index: 10;
+    }
+
+    #intro img {
+      width: 200px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
     }
 
     /* Barra de navegación */
     nav {
-      background-color: #111;
+      background-color: var(--azul-marino);
       display: flex;
       align-items: center;
       padding: 0.5rem 1rem;
-      border-bottom: 1px solid #333;
+      border-bottom: 2px solid #ccc;
     }
 
     nav img {
@@ -27,45 +60,38 @@
     }
 
     nav span {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: bold;
-      color: #fff;
+      color: var(--blanco);
     }
 
-    /* Contenido principal */
+    /* Contenido */
     .container {
       max-width: 800px;
       margin: 3rem auto;
-      padding: 1rem 2rem;
-      background-color: #1a1a1a;
+      padding: 1.5rem 2rem;
+      background-color: #f8f9ff;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 60, 0, 0.2);
+      box-shadow: 0 0 12px rgba(0, 0, 50, 0.1);
     }
 
     h1 {
-      color: #ff3c00;
+      color: var(--azul-marino);
       font-size: 2rem;
-      border-bottom: 2px solid #ff3c00;
-      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
-    h2 {
-      color: #ff6a00;
-      margin-top: 2rem;
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li::before {
-      content: "🔥 ";
-      color: #ff3c00;
+      padding-left: 1.5rem;
     }
 
     a {
-      color: #00ffff;
+      color: #0044cc;
       text-decoration: none;
     }
 
@@ -73,52 +99,63 @@
       text-decoration: underline;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #888;
+    /* Mostrar contenido después de intro */
+    body.loaded #main {
+      display: block;
+    }
+
+    #main {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- Intro animada con el logo -->
+  <div id="intro">
+    <img src="logo.png" alt="NG Studios Logo" />
+  </div>
+
+  <!-- Barra de navegación -->
   <nav>
     <img src="logo.png" alt="NG Studios Logo" />
     <span>NGStudios</span>
   </nav>
 
-  <!-- CONTENIDO -->
-  <div class="container">
-    <h1>Políticas de Ideas - Kravex</h1>
+  <!-- Contenido principal -->
+  <div id="main">
+    <div class="container">
+      <h1>Políticas de Ideas - Kravex</h1>
+      <p>Kravex es un juego de terror en desarrollo. Esta página es para quienes deseen compartir ideas que serán tomadas por los desarrolladores y podrían incluirse en el juego.</p>
 
-    <p><strong>Kravex</strong> es un juego de terror en desarrollo. Esta página es para quienes deseen compartir ideas que serán tomadas por los desarrolladores y podrían incluirse en el juego.</p>
-
-    <h2>📩 ¿Qué tipo de ideas podés enviar?</h2>
-    <ul>
-      <li>Cualquier tipo de idea creativa para el juego</li>
-      <li>Excepto las siguientes:</li>
+      <h2>¿Qué tipo de ideas podés enviar?</h2>
+      <p>Cualquier tipo de idea salvo :</p>
       <ul>
         <li>Violencia sexual, abuso infantil o tortura explícita</li>
         <li>Discriminación o discurso de odio</li>
         <li>Contenido extremadamente gráfico sin propósito narrativo</li>
       </ul>
-    </ul>
 
-    <h2>⚠️ Condiciones de uso</h2>
-    <ul>
-      <li>Podemos usar, modificar o adaptar tu propuesta en el juego final.</li>
-      <li>No recibirás compensación económica, créditos ni derecho a reclamos legales.</li>
-      <li>Tu envío es voluntario y con fines colaborativos.</li>
-    </ul>
+      <h2>⚠️ Condiciones de uso</h2>
+      <ul>
+        <li>Podemos usar, modificar o adaptar tu propuesta en el juego final.</li>
+        <li>No recibirás compensación económica, créditos ni derecho a reclamos legales.</li>
+        <li>Tu envío es voluntario y con fines colaborativos.</li>
+      </ul>
 
-    <h2>📬 ¿Cómo enviar tu idea?</h2>
-    <p>Podés escribirnos por email a:  
-      <a href="mailto:ng.studiios@gmail.com">ng.studiios@gmail.com</a>  
-      o dejar un comentario en nuestra cuenta de TikTok.</p>
+      <h2>¿Cómo enviar tu idea?</h2>
+      <p>Podés escribirnos a: <a href="mailto:ng.studiios@gmail.com">ng.studiios@gmail.com</a> o a través de los comentarios de la cuenta de TikTok</p>
+    </div>
   </div>
 
-  <div class="footer">© NGStudios - 2025</div>
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.body.classList.add("loaded");
+      }, 3000); // Mostrar contenido tras intro
+    };
+  </script>
+
 </body>
 </html>
+
