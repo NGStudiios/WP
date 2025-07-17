@@ -7,75 +7,103 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
     }
 
-    #intro {
-      position: fixed;
-      background-color: #000;
-      width: 100%;
-      height: 100vh;
+    /* Barra de navegación */
+    nav {
+      background-color: #111;
       display: flex;
       align-items: center;
-      justify-content: center;
-      animation: fadeOut 2s ease 2.5s forwards;
-      z-index: 10;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #333;
     }
 
-    #intro img {
-      width: 200px;
-      height: auto;
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in forwards;
+    nav img {
+      height: 40px;
+      margin-right: 10px;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    nav span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
     }
 
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    #main {
-      display: none;
-      padding: 2rem;
+    /* Contenido principal */
+    .container {
       max-width: 800px;
-      margin: auto;
+      margin: 3rem auto;
+      padding: 1rem 2rem;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 60, 0, 0.2);
     }
 
-    h1, h2 {
+    h1 {
+      color: #ff3c00;
+      font-size: 2rem;
+      border-bottom: 2px solid #ff3c00;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: #ff6a00;
+      margin-top: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🔥 ";
       color: #ff3c00;
     }
 
     a {
       color: #00ffff;
+      text-decoration: none;
     }
 
-    /* Mostrar el contenido después de la intro */
-    body.loaded #main {
-      display: block;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div id="intro">
-    <img src="JOGO (1).png" alt="NG Studios Logo" />
-  </div>
 
-  <div id="main">
+  <!-- NAVBAR -->
+  <nav>
+    <img src="logo.png" alt="NG Studios Logo" />
+    <span>NGStudios</span>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="container">
     <h1>Políticas de Ideas - Kravex</h1>
-    <p><strong>Kravex</strong> es un juego de terror en desarrollo. Este sitio es para quienes deseen compartir ideas creativas que podrían incluirse en el juego.</p>
+
+    <p><strong>Kravex</strong> es un juego de terror en desarrollo. Esta página es para quienes deseen compartir ideas que serán tomadas por los desarrolladores y podrían incluirse en el juego.</p>
 
     <h2>📩 ¿Qué tipo de ideas podés enviar?</h2>
     <ul>
-      <li>Mecánicas de juego originales</li>
-      <li>Monstruos o criaturas con habilidades</li>
-      <li>Eventos, escenas o puzles</li>
-      <li>Conceptos de historia o ambiente</li>
+      <li>Cualquier tipo de idea creativa para el juego</li>
+      <li>Excepto las siguientes:</li>
+      <ul>
+        <li>Violencia sexual, abuso infantil o tortura explícita</li>
+        <li>Discriminación o discurso de odio</li>
+        <li>Contenido extremadamente gráfico sin propósito narrativo</li>
+      </ul>
     </ul>
 
     <h2>⚠️ Condiciones de uso</h2>
@@ -85,26 +113,12 @@
       <li>Tu envío es voluntario y con fines colaborativos.</li>
     </ul>
 
-    <h2>🧠 Código Ético</h2>
-    <ul>
-      <li>Violencia sexual, abuso infantil o tortura explícita</li>
-      <li>Discriminación o discurso de odio</li>
-      <li>Contenido extremadamente gráfico sin propósito narrativo</li>
-    </ul>
-
     <h2>📬 ¿Cómo enviar tu idea?</h2>
-    <p>Podés escribirnos a: <a href="mailto:kravex.juego@gmail.com">kravex.juego@gmail.com</a></p>
-
-    <h2>🙏 Gracias</h2>
-    <p>Tu creatividad puede formar parte del mundo de Kravex. ¡Gracias por sumarte a este viaje!</p>
+    <p>Podés escribirnos por email a:  
+      <a href="mailto:ng.studiios@gmail.com">ng.studiios@gmail.com</a>  
+      o dejar un comentario en nuestra cuenta de TikTok.</p>
   </div>
 
-  <script>
-    window.onload = () => {
-      setTimeout(() => {
-        document.body.classList.add("loaded");
-      }, 3000); // Espera que termine la animación de bienvenida
-    };
-  </script>
+  <div class="footer">© NGStudios - 2025</div>
 </body>
 </html>
