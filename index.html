@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Políticas de Ideas - Kravex</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      overflow: hidden;
+    }
+
+    #intro {
+      position: fixed;
+      background-color: #000;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeOut 2s ease 2.5s forwards;
+      z-index: 10;
+    }
+
+    #intro img {
+      width: 200px;
+      height: auto;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    #main {
+      display: none;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #ff3c00;
+    }
+
+    a {
+      color: #00ffff;
+    }
+
+    /* Mostrar el contenido después de la intro */
+    body.loaded #main {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="intro">
+    <img src="JOGO (1).png" alt="NG Studios Logo" />
+  </div>
+
+  <div id="main">
+    <h1>Políticas de Ideas - Kravex</h1>
+    <p><strong>Kravex</strong> es un juego de terror en desarrollo. Este sitio es para quienes deseen compartir ideas creativas que podrían incluirse en el juego.</p>
+
+    <h2>📩 ¿Qué tipo de ideas podés enviar?</h2>
+    <ul>
+      <li>Mecánicas de juego originales</li>
+      <li>Monstruos o criaturas con habilidades</li>
+      <li>Eventos, escenas o puzles</li>
+      <li>Conceptos de historia o ambiente</li>
+    </ul>
+
+    <h2>⚠️ Condiciones de uso</h2>
+    <ul>
+      <li>Podemos usar, modificar o adaptar tu propuesta en el juego final.</li>
+      <li>No recibirás compensación económica, créditos ni derecho a reclamos legales.</li>
+      <li>Tu envío es voluntario y con fines colaborativos.</li>
+    </ul>
+
+    <h2>🧠 Código Ético</h2>
+    <ul>
+      <li>Violencia sexual, abuso infantil o tortura explícita</li>
+      <li>Discriminación o discurso de odio</li>
+      <li>Contenido extremadamente gráfico sin propósito narrativo</li>
+    </ul>
+
+    <h2>📬 ¿Cómo enviar tu idea?</h2>
+    <p>Podés escribirnos a: <a href="mailto:kravex.juego@gmail.com">kravex.juego@gmail.com</a></p>
+
+    <h2>🙏 Gracias</h2>
+    <p>Tu creatividad puede formar parte del mundo de Kravex. ¡Gracias por sumarte a este viaje!</p>
+  </div>
+
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.body.classList.add("loaded");
+      }, 3000); // Espera que termine la animación de bienvenida
+    };
+  </script>
+</body>
+</html>
